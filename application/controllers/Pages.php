@@ -18,11 +18,6 @@ class Pages extends CI_Controller
       $this->load->view('students', $data);
     }
 
-    // public function create()
-    // {
-    //   $this->load->view('create');
-    // }
-
     public function createSubmit()
     {
         $this->form_validation->set_rules('roll_no', 'Roll_no', 'trim|required');
@@ -35,17 +30,25 @@ class Pages extends CI_Controller
           );
         }
         else {
-          $studData = array(
-            'roll_no' => $this->input->post('roll_no', true),
-            'name' => $this->input->post('name', true),
-          );
+          $query = $this->db->get_where('stud', array('roll_no' => $this->input->post('roll_no', true))); //To check if student already exist
 
-          $this->stud_model->insert_stud($studData);
+          if($query->result()){
+            $response = array(
+              'status' => 'error',
+              'message' => 'This student already exist'
+            );
+          }else{
+            $studData = array(
+              'roll_no' => $this->input->post('roll_no', true),
+              'name' => $this->input->post('name', true),
+            );
 
-          $response = array(
+            $this->stud_model->insert_stud($studData);
+
+            $response = array(
               'status' => 'success',
-              'message' => "<h3>Saved Successfully</h3>"
-          );
+            );
+          }
         }
 
         $this->output

@@ -12,7 +12,7 @@
         <div class="row justify-content-center">
           <div class="col-md-6">
             <h1 id="temp">Create</h1>
-            <div id="message"></div>
+            <div id="createResponse"></div>
             <?php echo form_open('pages/createSubmit', array('id' => 'createForm')) ?>
             <div class="form-group">
               <input type="hidden" name="old_roll_no" id="old_roll_no" value="">

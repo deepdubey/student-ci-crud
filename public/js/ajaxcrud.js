@@ -6,7 +6,7 @@ $(function () {
 
   $(".editButton").on('click', function (e) {
     $.ajax({
-      url: "http://localhost/student/pages/edit/" + $(this).attr('rollno'),
+      url: "http://localhost/student-ci-crud/pages/edit/" + $(this).attr('rollno'),
       type: 'GET',
       dataType: 'json',
       success: function (response) {
@@ -26,7 +26,7 @@ $(function () {
 
     var editForm = $(this);
     $.ajax({
-      url: "http://localhost/student/pages/editSubmit",
+      url: "http://localhost/student-ci-crud/pages/editSubmit",
       type: 'post',
       data: editForm.serialize(),
       success: function (response) {
@@ -55,8 +55,7 @@ $(function () {
         if (response.status == 'success') {
           $('.modal-body').html('<h1>Record added successfully</h1>');
         }
-
-        $("#message").html(response.message);
+        $("#createResponse").html(response.message);
 
       }
     });

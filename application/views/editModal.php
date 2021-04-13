@@ -9,13 +9,10 @@
         </button>
       </div>
       <div class="modal-body">
-
-        <h1 id="temp">Edit</h1>
-        <div id="message"></div>
         <div class="row justify-content-center">
           <div class="col-md-6">
-            <div id="message">
-            </div>
+            <h1 id="temp">Edit</h1>
+            <div id="message"></div>
             <?php echo form_open('pages/editSubmit', array('id' => 'editForm')) ?>
             <div class="form-group">
               <input type="hidden" name="old_roll_no" id="old_roll_no" value="">
