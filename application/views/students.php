@@ -62,7 +62,8 @@
               <!-- <a href="<?php //echo base_url().'pages/edit/'.$data[$i]['roll_no']?>"
               class="btn btn-info btn-sm editRecord">Edit</a> -->
               <button type="button" name="" class="editButton btn btn-primary btn-sm" data-toggle="modal"
-                data-target="#exampleModalCenter" rollno="<?php echo $data[$i]['roll_no']?>">Edit</button>
+                data-target="#exampleModalCenter"
+                editUrl="<?php echo base_url().'pages/edit/'.$data[$i]['roll_no']?>">Edit</button>
               <a href="<?php echo base_url().'pages/delete/'.$data[$i]['roll_no']?>"
                 class="btn btn-danger btn-sm deleteRecord">Delete</a>
             </td>

@@ -6,7 +6,7 @@ $(function () {
 
   $(".editButton").on('click', function (e) {
     $.ajax({
-      url: "http://localhost/student-ci-crud/pages/edit/" + $(this).attr('rollno'),
+      url: $(this).attr('editUrl'),
       type: 'GET',
       dataType: 'json',
       success: function (response) {
@@ -26,7 +26,7 @@ $(function () {
 
     var editForm = $(this);
     $.ajax({
-      url: "http://localhost/student-ci-crud/pages/editSubmit",
+      url: editForm.attr('action'),
       type: 'post',
       data: editForm.serialize(),
       success: function (response) {
